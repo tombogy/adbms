@@ -1,0 +1,550 @@
+
+mysql> use varun;
+Database changed
+mysql> select* from akaza;
++------+-----------+-------+------+
+| ID   | NAME      | MOBNO | AGE  |
++------+-----------+-------+------+
+|    1 | ROBIN     |  1234 |   20 |
+|    2 | babu      |  8234 |   20 |
+|    3 |  ayisha   |  8264 |   20 |
+|    4 | chotta    |  8209 |   20 |
+|    6 | sneha     |  9647 |   20 |
+|    8 | dhanya    |  9647 |   20 |
+|    9 | nandha    |  9647 |   20 |
+|   10 | niranjana |  9647 |   20 |
++------+-----------+-------+------+
+8 rows in set (0.00 sec)
+
+mysql> alter table akaza drop colume NAME;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NAME' at line 1
+mysql> insert from akaza values(11,"akash",1234,20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from akaza values(11,"akash",1234,20)' at line 1
+mysql> select* from akaza;
++------+-----------+-------+------+
+| ID   | NAME      | MOBNO | AGE  |
++------+-----------+-------+------+
+|    1 | ROBIN     |  1234 |   20 |
+|    2 | babu      |  8234 |   20 |
+|    3 |  ayisha   |  8264 |   20 |
+|    4 | chotta    |  8209 |   20 |
+|    6 | sneha     |  9647 |   20 |
+|    8 | dhanya    |  9647 |   20 |
+|    9 | nandha    |  9647 |   20 |
+|   10 | niranjana |  9647 |   20 |
++------+-----------+-------+------+
+8 rows in set (0.00 sec)
+
+mysql> select * from table akaza;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table akaza' at line 1
+mysql> update akaza;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> update akaza  set NAME="ROBIN SIR" where id=1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select* from akaza;
++------+-----------+-------+------+
+| ID   | NAME      | MOBNO | AGE  |
++------+-----------+-------+------+
+|    1 | ROBIN SIR |  1234 |   20 |
+|    2 | babu      |  8234 |   20 |
+|    3 |  ayisha   |  8264 |   20 |
+|    4 | chotta    |  8209 |   20 |
+|    6 | sneha     |  9647 |   20 |
+|    8 | dhanya    |  9647 |   20 |
+|    9 | nandha    |  9647 |   20 |
+|   10 | niranjana |  9647 |   20 |
++------+-----------+-------+------+
+8 rows in set (0.00 sec)
+
+mysql> alter table azaka;
+ERROR 1146 (42S02): Table 'varun.azaka' doesn't exist
+mysql> alter table akaza;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> alter table akaza DEPART.NAME;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DEPART.NAME' at line 1
+mysql> alter table akaza ADD DE_NAME;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> alter table akaza ADD DE_NAME;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> alter table akaza add colume DE_NAME;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DE_NAME' at line 1
+mysql> alter table akaza add colume DE_NAME varchar(100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DE_NAME varchar(100)' at line 1
+mysql> alter table akaza add colume DE_NAME varchar(100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DE_NAME varchar(100)' at line 1
+mysql> alter table akaza add colome DE_NAME varchar(100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DE_NAME varchar(100)' at line 1
+mysql> alter table akaza add colume DE_NAME varchar(100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DE_NAME varchar(100)' at line 1
+mysql> alter table akaza add column DE_NAME varchar(100);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME |
++------+-----------+-------+------+---------+
+|    1 | ROBIN SIR |  1234 |   20 | NULL    |
+|    2 | babu      |  8234 |   20 | NULL    |
+|    3 |  ayisha   |  8264 |   20 | NULL    |
+|    4 | chotta    |  8209 |   20 | NULL    |
+|    6 | sneha     |  9647 |   20 | NULL    |
+|    8 | dhanya    |  9647 |   20 | NULL    |
+|    9 | nandha    |  9647 |   20 | NULL    |
+|   10 | niranjana |  9647 |   20 | NULL    |
++------+-----------+-------+------+---------+
+8 rows in set (0.00 sec)
+
+mysql> update akaza set DE_NAME=" mca" where id=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME |
++------+-----------+-------+------+---------+
+|    1 | ROBIN SIR |  1234 |   20 |  mca    |
+|    2 | babu      |  8234 |   20 | NULL    |
+|    3 |  ayisha   |  8264 |   20 | NULL    |
+|    4 | chotta    |  8209 |   20 | NULL    |
+|    6 | sneha     |  9647 |   20 | NULL    |
+|    8 | dhanya    |  9647 |   20 | NULL    |
+|    9 | nandha    |  9647 |   20 | NULL    |
+|   10 | niranjana |  9647 |   20 | NULL    |
++------+-----------+-------+------+---------+
+8 rows in set (0.00 sec)
+
+mysql> update akaza set DE_NAME="bca" where id=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update akaza set DE_NAME="bcs cs" where id=3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME |
++------+-----------+-------+------+---------+
+|    1 | ROBIN SIR |  1234 |   20 |  mca    |
+|    2 | babu      |  8234 |   20 | bca     |
+|    3 |  ayisha   |  8264 |   20 | bcs cs  |
+|    4 | chotta    |  8209 |   20 | NULL    |
+|    6 | sneha     |  9647 |   20 | NULL    |
+|    8 | dhanya    |  9647 |   20 | NULL    |
+|    9 | nandha    |  9647 |   20 | NULL    |
+|   10 | niranjana |  9647 |   20 | NULL    |
++------+-----------+-------+------+---------+
+8 rows in set (0.00 sec)
+
+mysql> insert into akaza values(11," vasuanan",1234,48);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> select* from akaza;
++------+-----------+-------+------+---------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME |
++------+-----------+-------+------+---------+
+|    1 | ROBIN SIR |  1234 |   20 |  mca    |
+|    2 | babu      |  8234 |   20 | bca     |
+|    3 |  ayisha   |  8264 |   20 | bcs cs  |
+|    4 | chotta    |  8209 |   20 | NULL    |
+|    6 | sneha     |  9647 |   20 | NULL    |
+|    8 | dhanya    |  9647 |   20 | NULL    |
+|    9 | nandha    |  9647 |   20 | NULL    |
+|   10 | niranjana |  9647 |   20 | NULL    |
++------+-----------+-------+------+---------+
+8 rows in set (0.00 sec)
+
+mysql> update akaza set DE_NAME="bcs micro" where id=4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update akaza set DE_NAME="bcs micro" where id=6;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update akaza set DE_NAME="bcs zoology" where id=8;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update akaza set DE_NAME="bcs sociology" where id=9;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update akaza set DE_NAME="bcs nusring" where id=10;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   20 |  mca          |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
++------+-----------+-------+------+---------------+
+8 rows in set (0.00 sec)
+
+mysql> insert into akaza values(5," vasuanan",1234,48,bcs micro);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'micro)' at line 1
+mysql> insert into akaza values(5," vasuanan",1234,48,"bcs micro");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   20 |  mca          |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
++------+-----------+-------+------+---------------+
+9 rows in set (0.00 sec)
+
+mysql> insert into akaza values(6," dasapan",1234,48," mcs maths");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   20 |  mca          |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> update akaza set AGE=10,DE_NAME="mba" where id=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select* from akaza where id=1;
++------+-----------+-------+------+---------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME |
++------+-----------+-------+------+---------+
+|    1 | ROBIN SIR |  1234 |   10 | mba     |
++------+-----------+-------+------+---------+
+1 row in set (0.00 sec)
+
+mysql> select* from akaza where id>=1;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select* from akaza where id>=5;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+6 rows in set (0.00 sec)
+
+mysql> select ID,NAME,DE_NAME from akaza where id=5;
++------+-----------+-----------+
+| ID   | NAME      | DE_NAME   |
++------+-----------+-----------+
+|    5 |  vasuanan | bcs micro |
++------+-----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> update table akaza set id=6,NAME="dasapan" where id=6;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table akaza set id=6,NAME="dasapan" where id=6' at line 1
+mysql> select* from akaza where 7<=id>=10;
+Empty set (0.00 sec)
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select* from akaza where id=<7>=10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=<7>=10' at line 1
+mysql> select* from akaza where id>7 and id<10;
++------+--------+-------+------+---------------+
+| ID   | NAME   | MOBNO | AGE  | DE_NAME       |
++------+--------+-------+------+---------------+
+|    8 | dhanya |  9647 |   20 | bcs zoology   |
+|    9 | nandha |  9647 |   20 | bcs sociology |
++------+--------+-------+------+---------------+
+2 rows in set (0.00 sec)
+
+mysql> update table akaza set id=6,NAME="dasapan" where age=48;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table akaza set id=6,NAME="dasapan" where age=48' at line 1
+mysql> update table akaza set id=7,NAME="dasapan" where id=6;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table akaza set id=7,NAME="dasapan" where id=6' at line 1
+mysql> update table akaza set id=6,NAME="dasapan" where age=48;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table akaza set id=6,NAME="dasapan" where age=48' at line 1
+mysql> update akaza set id=7  where NAME="dasapan";
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select* from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> update akaza set id=7  where NAME="dasapan";
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select NAME from akaza where NAME like 'd%';
++--------+
+| NAME   |
++--------+
+| dhanya |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select NAME from akaza where NAME like '_d%';
++----------+
+| NAME     |
++----------+
+|  dasapan |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select NAME from akaza where NAME like 'd%';
++--------+
+| NAME   |
++--------+
+| dhanya |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select NAME from akaza where NAME like 'd%';
++--------+
+| NAME   |
++--------+
+| dhanya |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select NAME from akaza where NAME like'd%';
++--------+
+| NAME   |
++--------+
+| dhanya |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select NAME from akaza where NAME like'D%';
++--------+
+| NAME   |
++--------+
+| dhanya |
++--------+
+1 row in set (0.00 sec)
+
+mysql> update akaza set id=7  where NAME="dasapan";
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> update akaza set id=7, AGE=20 where name='dasapan';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select *from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> update akaza set id=7, AGE=20 where name='dasapan' and DE_NAME='mcs maths';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select *from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    6 |  dasapan  |  1234 |   48 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> update akaza set id=7, AGE=20 where  name=' dasapan';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    7 |  dasapan  |  1234 |   20 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> update akaza set id=7, AGE=20 where name='' and DE_NAME='mcs maths';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select *from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    7 |  dasapan  |  1234 |   20 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> update akaza set name='' where id=7;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from akaza;
++------+-----------+-------+------+---------------+
+| ID   | NAME      | MOBNO | AGE  | DE_NAME       |
++------+-----------+-------+------+---------------+
+|    1 | ROBIN SIR |  1234 |   10 | mba           |
+|    2 | babu      |  8234 |   20 | bca           |
+|    3 |  ayisha   |  8264 |   20 | bcs cs        |
+|    4 | chotta    |  8209 |   20 | bcs micro     |
+|    6 | sneha     |  9647 |   20 | bcs micro     |
+|    8 | dhanya    |  9647 |   20 | bcs zoology   |
+|    9 | nandha    |  9647 |   20 | bcs sociology |
+|   10 | niranjana |  9647 |   20 | bcs nusring   |
+|    5 |  vasuanan |  1234 |   48 | bcs micro     |
+|    7 |           |  1234 |   20 |  mcs maths    |
++------+-----------+-------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select NAME from akaza where NAME like '%d%';
++--------+
+| NAME   |
++--------+
+| dhanya |
+| nandha |
++--------+
+2 rows in set (0.00 sec)
+
+mysql>
